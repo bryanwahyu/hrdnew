@@ -1,0 +1,21 @@
+<table>
+    <thead>
+            <th>Tipe</th>
+            <th>Bahan</th>
+            <th>Nama</th>
+            <th>jumlah</th>
+            <th>keterangan</th>
+            <th>tanggal</th>
+    </thead>
+    <tbody>
+        @foreach ($hists as $his)
+            <tr>
+                <td>{{$his->tipe}}</td>
+                <td>{{$his->bahan->nama}}</td>
+                <td>{{$his->nama}}</td>
+                <td>{{$his->jumlah}}</td>
+                <td>{{$his->created_at}}</td>
+            </tr>
+        @endforeach
+    </tbody>
+</table>

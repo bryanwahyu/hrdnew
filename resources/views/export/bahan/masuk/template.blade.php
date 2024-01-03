@@ -1,0 +1,13 @@
+<table>
+    <thead>
+    <tr>
+        <th>Tipe</th>
+        <th>Nama</th>
+        <th>Tanggal(DD-MM-YYYY)</th>
+        <th>Jumlah</th>
+        <th>Keterangan</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>

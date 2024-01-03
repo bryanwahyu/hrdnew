@@ -1,0 +1,32 @@
+version: "3.7"
+services:
+  app:
+    build:
+      args:
+        user: bryan
+        uid: 5000
+      context: ./
+      dockerfile: Dockerfile
+    image: wms
+    container_name: wms-app
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
+    networks:
+      - wms
+  nginx:
+    image: nginx:alpine
+    container_name: wms-nginx
+    restart: unless-stopped
+    ports:
+      - 80:80
+    volumes:
+      - ./:/var/www
+      - ./docker-compose/nginx:/etc/nginx/conf.d/
+    networks:
+      - wms
+
+networks:
+  wms:
+    driver: bridge
